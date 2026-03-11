@@ -1,0 +1,208 @@
+.history-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 80px;
+}
+
+.history-header {
+  padding: 48px 24px 16px;
+}
+
+.history-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.empty-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 100px;
+  height: 100px;
+  background-color: var(--background-default);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.empty-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.session-list {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-default);
+  padding: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.session-item:hover {
+  transform: scale(0.99);
+}
+
+.session-item:active {
+  transform: scale(0.98);
+}
+
+.session-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.session-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.session-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shuffle-badge {
+  padding: 4px;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  color: var(--primary);
+  display: flex;
+}
+
+.preview-text {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.date-text {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.session-actions {
+  display: flex;
+  gap: 8px;
+  margin-right: 12px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+.action-btn.delete {
+  color: #EF4444;
+}
+
+.badge {
+  padding: 6px 10px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 340px;
+  background-color: var(--background-default);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.modal-input {
+  width: 100%;
+  height: 48px;
+  background-color: var(--background-secondary);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.modal-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-button {
+  flex: 1;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal-button.cancel {
+  background-color: var(--background-secondary);
+  color: var(--text);
+}
+
+.modal-button.confirm {
+  background-color: var(--primary);
+  color: var(--button-text);
+}
