@@ -9,8 +9,7 @@ interface CharacterData {
 }
 
 const openai = new OpenAI({
-  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
-  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+  apiKey: process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY
 });
 
 export async function registerRoutes(
@@ -20,14 +19,14 @@ export async function registerRoutes(
   app.get("/api/health", (req, res) => {
     res.json({
       status: "ok",
-      aiConfigured: !!process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+     aiConfigured: !!(process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY),
       timestamp: new Date().toISOString(),
     });
   });
 
   app.post("/api/ocr", async (req, res) => {
     try {
-      if (!process.env.AI_INTEGRATIONS_OPENAI_API_KEY) {
+      if ((process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY {
         console.error("AI API key not configured");
         return res.status(500).json({ error: "AI service not configured" });
       }
@@ -128,7 +127,7 @@ Critical rules:
 
   app.post("/api/define", async (req, res) => {
     try {
-      if (!process.env.AI_INTEGRATIONS_OPENAI_API_KEY) {
+      if (!(process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY)) {
         return res.status(500).json({ error: "AI service not configured" });
       }
 
