@@ -76,11 +76,11 @@ Critical rules:
           content: [
             { type: "text", text: prompt },
             {
-              type: "image_url",
-              image_url: {
-                url: `data:image/jpeg;base64,\${image}`,
-              },
-            },
+  type: "image_url",
+  image_url: {
+    url: image.startsWith('data:') ? image : `data:image/jpeg;base64,\${image}`,
+  },
+},
           ],
         },
       ],
