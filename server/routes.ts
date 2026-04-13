@@ -26,7 +26,7 @@ export async function registerRoutes(
 
   app.post("/api/ocr", async (req, res) => {
     try {
-      if ((process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY {
+ if (!(process.env.OPENAI_API_KEY || process.env.AI_INTEGRATIONS_OPENAI_API_KEY)) {
         console.error("AI API key not configured");
         return res.status(500).json({ error: "AI service not configured" });
       }
