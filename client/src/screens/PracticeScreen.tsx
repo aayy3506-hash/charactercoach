@@ -37,10 +37,9 @@ export default function PracticeScreen({ onNavigateToReview }: Props) {
       
       const base64 = await new Promise<string>((resolve, reject) => {
         reader.onload = () => {
-          const result = reader.result as string;
-          const base64Data = result.split(',')[1];
-          resolve(base64Data);
-        };
+  const result = reader.result as string;
+  resolve(result);
+};
         reader.onerror = reject;
         reader.readAsDataURL(file);
       });
