@@ -87,7 +87,7 @@ Critical rules:
       max_tokens: 4096,
     });
 
-    const text = response.choices?.message?.content || "";
+    const text = (response.choices as any)?.message?.content || "";
 
     let jsonStr = text.trim();
     if (jsonStr.startsWith("```json")) {
@@ -164,7 +164,7 @@ Rules:
       max_tokens: 1024,
     });
 
-    const text = response.choices?.message?.content || "";
+    const text = (response.choices as any)?.message?.content || "";
     let jsonStr = text.trim();
     if (jsonStr.startsWith("```json")) jsonStr = jsonStr.slice(7);
     else if (jsonStr.startsWith("```")) jsonStr = jsonStr.slice(3);
